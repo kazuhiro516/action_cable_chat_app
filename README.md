@@ -1,24 +1,18 @@
-# README
+# Action Cable を使用したリアルタイムチャットアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使い方
+任意のディレクトリでクローンする。
+```
+git clone https://github.com/kazuhiro516/action_cable_chat_app.git
+```
+以下のコマンドを実行し、コンテナを起動する。
+```
+docker-compose up
+```
+http://localhost:3000 にアクセスできることを確認する。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tips
+コンテナに接続して開発する場合は、以下のコマンドを実行する。
+```
+docker-compose exec web bash
+```
