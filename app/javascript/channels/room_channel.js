@@ -9,8 +9,8 @@ const chatChannel = consumer.subscriptions.create("RoomChannel", {
     // Called when the subscription has been terminated by the server
   },
 
-  received(data) {
-    return alert(data['message']);
+  received: function (data) {
+    return $('#messages').append(data['message']);
   },
 
   speak: function (message) {
@@ -22,7 +22,6 @@ const chatChannel = consumer.subscriptions.create("RoomChannel", {
 
 $(document).on('keypress', '[data-behavior~=room_speaker]', function (event) {
   if (event.key === 'Enter') {
-    console.log(event.target.value)
     chatChannel.speak(event.target.value);
     event.target.value = '';
     return event.preventDefault();
